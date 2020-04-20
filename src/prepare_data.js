@@ -13,17 +13,25 @@ for (country in data) {
     totalDeceased = totalDeceased + onlyLast[country].deaths
 }
 
-console.log(onlyLast['US'])
-console.log(totalConfirmed)
-console.log(totalRecovered)
-console.log(totalDeceased)
-
 totals = {
     totalConfirmed,
     totalRecovered,
     totalDeceased
 }
 
+oldData = require('./data/totals.json');
+totals['totalConfirmedIncrease'] = totals['totalConfirmed'] - oldData['totalConfirmed']
+totals['totalRecoveredIncrease'] = totals['totalRecovered'] - oldData['totalRecovered']
+totals['totalDeceasedIncrease'] = totals['totalDeceased'] - oldData['totalDeceased']
+
+console.log(onlyLast['US'])
+console.log(totalConfirmed)
+console.log(totalRecovered)
+console.log(totalDeceased)
+console.log(totals['totalConfirmedIncrease'])
+console.log(totals['totalRecoveredIncrease'])
+console.log(totals['totalDeceasedIncrease'])
+
 totals_json = JSON.stringify(totals)
-var fs = require('fs');
+fs = require('fs');
 fs.writeFileSync('./data/totals.json', totals_json, 'utf8');

@@ -39,6 +39,9 @@ export default function SimpleCard() {
                 <Typography className={classes.content} variant="h3" component="h2">
                     {typeof totals.totalRecovered === 'number' ? totals.totalRecovered.toLocaleString() : totals.totalRecovered}
                 </Typography>
+                <Typography className={classes.content} variant="h6" component="h6">
+                    + {typeof totals.totalRecoveredIncrease === 'number' ? totals.totalRecoveredIncrease.toLocaleString() : totals.totalRecoveredIncrease}
+                </Typography>
             </CardContent>
         </Card>
     );

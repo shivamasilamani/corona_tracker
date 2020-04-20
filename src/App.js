@@ -17,6 +17,22 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+
+  // const storage = firebase.storage();
+  // const pathReference = storage.ref('data/raw.json');
+
+  // starsRef.getDownloadURL().then(function(url) {
+  //   const xhr = new XMLHttpRequest();
+  //   xhr.responseType = 'blob';
+  //   xhr.onload = function(event) {
+  //     var blob = xhr.response;
+  //   };
+  //   xhr.open('GET', url);
+  //   xhr.send();
+  // }).catch(function(error) {
+  //   switch (error.code) {}
+  // });
+
   return (
     <div className={classes.root}>
       <Header />
